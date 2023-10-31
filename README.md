@@ -9,3 +9,5 @@ Overview of deep learning foundational concepts
 5. Improve Generalization
 6. Working with image data
 7. Working with text data
+
+# Additional Concepts
