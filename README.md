@@ -10,4 +10,8 @@ Overview of deep learning foundational concepts
 6. Working with image data
 7. Working with text data
 
-# Additional Concepts
+## Other Concepts
+- Gain Functions
+- Convexity of training function
+- Limitations of linear functions
+- 
