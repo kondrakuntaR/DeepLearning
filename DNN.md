@@ -4,7 +4,7 @@ Can they perform task the way humans do? Classify images, understand natural lan
 
 DNNs have been implement to solve various tasks such as image classification, segmentation, text summarization, classification, natural language translation etc.
 
-#### Concepts Covered
+#### Contents
 1. Feedforward Neural Networks
 2. Backpropogation
 
@@ -22,10 +22,25 @@ Extend the idea of linear models to non-linear functions of $x$. Non-linear tran
 If feedback connections are included where the output of the feedforward neural network is fed back into the network, then they are called recurrent neural networks.
 
 ## Backpropogation
+- model with list of parameters $\theta$
+- loss function to minimize $L$
+- derivative of loss function w.r.t. parameters $\frac{\partial L}{\partial \theta}$
+- optimizer to update parameters
 
+#### Steps
+1. Given inputs, perform forward pass through the feedforward neural network using the activation functions, initial weights and bias.
+2. At the output layer, compute the loss between the predicted output and target output.
+3. Perform the backprop algorithm by computing the gradient of loss wrt the weights between the output layer $l$ and pervious hidden layer $(l-1)$.
+4. Update the weight by subtracting the product between learning rate (optional) and gradient value from the weight.
+$\theta_{new}=\theta_{old}-lr*\frac{\partial L}{\partial \theta}$
+
+#### Perceptron Learning Algorithm
+#### Backprop Vs Perceptron
 
 ### References
-[1] Goodfellow's Deep Learning Textbook
+1. Goodfellow's Deep Learning Textbook
+2. [Backpropagation Implementation - example](https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/)
+3. 
 
 
 
