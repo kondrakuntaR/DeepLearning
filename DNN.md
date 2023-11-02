@@ -75,6 +75,7 @@ $$\sigma^2=\frac{2}{fan_{in}}$$
 For uniform distribution $[-r,+r]$
 $$r=\sqrt{\frac{6}{fan_{in}}}$$
 ## Residual Connections
+Also known as skip connections. Found in ResNets, they facilitate training very deep networks and handle vanishing gradients
 ## Batch Normalization
 Normalizes the activations during training to avoid vanishing and exploding gradients.
 
