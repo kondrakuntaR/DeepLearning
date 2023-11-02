@@ -52,7 +52,7 @@ $b_{i}$ is the modified step direction term (as opposed to just using $g_{i}$) t
 
 $\mu$ is a new hyperparameter that denotes the momentum constant. Usually closer to 1, eg: 0.9, 0.99
 
-### SGD + Nesterov Accelerated Gradient (Nesterov Momentum)
+#### SGD + Nesterov Accelerated Gradient (Nesterov Momentum)
 In NAG, we use look-ahead parameters i.e. the future paramater $\theta$ to calculate the gradient used in the current momentum term. Using this momentum term, update rule is performed.
 
 ## ADAM Optimizer
@@ -60,6 +60,7 @@ Adaptive Moment Estimation or ADAM was introduced by Diedrik Kingma.
 ADAM stores exponentially decaying averages of past squared gradients i.e. $v_t$ (estimate of second moment - variance) as well as exponentially decaying averages of past gradients i.e. $m_t$ (estimate of first moment - mean). Here,
 $$m_t=\beta_{1}*m_{t-1}+(1-\beta_{1})*g_t$$
 $$v_t=\beta_{2}*v_{t-1}+(1-\beta_{2})*{g_t}^2$$
+ADAM tried to measure the size of the gradient. If mean gradient is high, ADAM decreases the learning rate. It the RMS gradient is high ADAM 
 
 ## References
 1. [Momentum](https://optimization.cbe.cornell.edu/index.php?title=Momentum)
