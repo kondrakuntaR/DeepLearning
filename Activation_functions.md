@@ -5,6 +5,7 @@ They help a network model complex relationships within the data. Activation func
 1. Sigmoid
 2. TanH
 3. ReLU
+4. Softmax
 
 ## Sigmoid Activation
 Also called Logistic activation is common used for binary classification problems. It outputs probabilities in the range (0,1).
@@ -19,3 +20,6 @@ ReLU introduces non-linearity that helps learn complex relationships within the 
 $\sigma{(x)}=ReLU(x):= max\{0,x\}$
 
 Exponential Linear Unit handle dying ReLU limitation (outputs input x if positive and 0 if input is negative). Unlike ReLU, ELU has non-zero gradients for negative values.
+
+## Softmax Activation
+Softmax activation function is often used in the output layer. Softmax function allocates probabilities of belonging to various classes to the outputs. It is commonly used in multi-class classification problems.
