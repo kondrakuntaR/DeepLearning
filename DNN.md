@@ -7,6 +7,10 @@ DNNs have been implement to solve various tasks such as image classification, se
 #### Contents
 1. Feedforward Neural Networks
 2. Backpropogation
+3. Vanishing and Exploding Gradients
+4. Initializations
+5. Residual Connections
+6. Batch Normalization
 
 ## Feedforward Neural Networks
 Also called as deep feedforward networks or multilayer perceptrons (MLPs) aim to approximate a function $f^*$ with input $x$ and output $y$.
@@ -37,10 +41,43 @@ $\theta_{new}=\theta_{old}-lr*\frac{\partial L}{\partial \theta}$
 #### Perceptron Learning Algorithm
 #### Backprop Vs Perceptron
 
-### References
+## Vanishing and Exploding Gradients
+During backpropagation, when the values of the gradients become extremely *small*, then it is refered to as **vanishing gradients** and when the values of the gradients become extremely *large*, then it is refered to as **exploding gradients**.
+
+#### Vanishing Gradients
+- Difficult to converge
+- Initial gradient value updates are extremely small; close to zero
+- Extremely slow learning
+#### Exploding Gradients
+- Diverges easily
+- Drastic change in weight updates
+
+These are caused due to activation functions such as Sigmoid and TanH which limit the output to a small range, say [0,1].
+
+This can be solved by incorporating weight initialization techniques rather than random initializations.
+
+## Initializations
+#### Xavier (Glorot) Initialization
+Aim is to set the initial values of the network weights such that activations roughly have the same variance across the network. Intended for TanH and Sigmoid activations.
+
+Initalization method samples values from a uniform/normal distribution with mean at 0.
+$$fan_{avg}=\frac{fan_{in}+fan_{out}}{2}$$
+Variance of normal distribution
+$$\sigma^2=\frac{1}{fan_{avg}}$$
+For uniform distribution $[-r,+r]$
+$$r=\sqrt{\frac{3}{fan_{avg}}}$$
+
+#### Kaiming (He) Initialization
+Mainly for ReLU and its variants. Assumes the variance of the weights must be dependent on the number of input units to a neuron.
+
+Variance of normal distribution
+$$\sigma^2=\frac{2}{fan_{in}}$$
+For uniform distribution $[-r,+r]$
+$$r=\sqrt{\frac{6}{fan_{in}}}$$
+## Residual Connections
+## Batch Normalization
+Normalizes the activations during training to avoid vanishing and exploding gradients.
+
+## References
 1. Goodfellow's Deep Learning Textbook
 2. [Backpropagation Implementation - example](https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/)
-3. 
-
-
-
